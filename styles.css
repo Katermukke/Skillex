@@ -11,7 +11,7 @@ a {
 
 @font-face {
   font-family: "Poppins";
-  src: url("../font/poppins.woff2") format("woff2"), url("../font/poppins.woff") format("woff");
+  src: url("./font/poppins.woff2") format("woff2"), url("./font/poppins.woff") format("woff");
 }
 body {
   font-family: "Poppins";
