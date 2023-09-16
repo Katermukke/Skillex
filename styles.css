@@ -59,13 +59,24 @@ body header .navBarLeft .navLeft {
   font-size: 0.9rem;
   align-items: center;
 }
-body header .navBarLeft li {
+body header .navBarLeft .navLeft li a {
+  color: black;
+  position: relative;
+}
+body header .navBarLeft .navLeft li a:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 0.2rem;
+  width: 0;
+  background-color: rgb(141, 188, 128);
+  border-radius: 50px;
+  transition: width 0.3s ease;
   cursor: pointer;
 }
-body header .navBarLeft li:hover {
-  text-decoration: underline;
-  text-decoration-color: rgb(213, 250, 157);
-  text-decoration-thickness: 3px;
+body header .navBarLeft .navLeft li a:hover:before {
+  margin-top: 4rem;
+  width: 100%;
 }
 body header .navRight {
   height: 100%;
@@ -274,71 +285,37 @@ body main .thirdBloc .containerMetier {
   display: flex;
   justify-content: space-around;
   align-items: end;
+  gap: 1rem;
 }
-body main .thirdBloc .metier1 {
+body main .thirdBloc .metier {
   overflow: contain;
+  width: 25%;
 }
-body main .thirdBloc .metier1 img {
-  height: 240px;
-  width: 240px;
-  border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-body main .thirdBloc .metier1 .h3Metier {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-body main .thirdBloc .metier1 p {
-  font-size: 12px;
-}
-body main .thirdBloc .metier2 {
-  overflow: contain;
-}
-body main .thirdBloc .metier2 img {
-  height: 240px;
-  width: 240px;
-  border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-body main .thirdBloc .metier2 .h3Metier {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-body main .thirdBloc .metier2 p {
-  font-size: 12px;
-}
-body main .thirdBloc .metier3 {
-  overflow: contain;
-}
-body main .thirdBloc .metier3 img {
-  height: 340px;
-  width: 240px;
-  border-radius: 10px;
-}
-body main .thirdBloc .metier3 .h3Metier {
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-body main .thirdBloc .metier3 p {
-  font-size: 12px;
-}
-body main .thirdBloc .metier4 {
-  overflow: contain;
-}
-body main .thirdBloc .metier4 img {
+body main .thirdBloc .metier .one {
   height: 250px;
-  width: 240px;
+  width: 100%;
   border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
-body main .thirdBloc .metier4 .h3Metier {
+body main .thirdBloc .metier .two {
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
+}
+body main .thirdBloc .metier .three {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+body main .thirdBloc .metier .four {
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
+}
+body main .thirdBloc .metier .h3Metier {
   font-size: 1rem;
   margin-bottom: 8px;
 }
-body main .thirdBloc .metier4 p {
+body main .thirdBloc .metier p {
   font-size: 12px;
 }
 body main .fourthBloc {
@@ -702,17 +679,42 @@ body .reveal.active {
   opacity: 1;
 }
 body .active.fade-bottom {
-  animation: fade-bottom 1s ease-in;
+  animation: fade-bottom 1s ease;
+}
+body .active.fade-bottomOne {
+  animation: fade-bottom 0.6s ease;
+}
+body .active.fade-bottomTwo {
+  animation: fade-bottom 0.9s ease;
+}
+body .active.fade-bottomThree {
+  animation: fade-bottom 1.2s ease;
+}
+body .active.fade-bottomFour {
+  animation: fade-bottom 1.5s ease;
+}
+body .active.fade-top {
+  animation: fade-top 1.4s ease;
 }
 body .active.fade-left {
-  animation: fade-left 1s ease-in;
+  animation: fade-left 1s ease;
 }
 body .active.fade-right {
   animation: fade-right 1s ease-in;
 }
 @keyframes fade-bottom {
   0% {
-    transform: translateY(50px);
+    transform: translateY(90px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-top {
+  0% {
+    transform: translateY(-100px);
     opacity: 0;
   }
   100% {
@@ -722,8 +724,8 @@ body .active.fade-right {
 }
 @keyframes fade-left {
   0% {
-    transform: translateX(-100px);
-    opacity: 0;
+    transform: translateX(-300px);
+    opacity: -100;
   }
   100% {
     transform: translateX(0);
